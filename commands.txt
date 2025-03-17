@@ -1,0 +1,7 @@
+
+操作	命令
+查看任务状态	launchctl list | grep keycounter
+停止任务	launchctl unload ~/Library/LaunchAgents/com.huangwei.keycounter.plist
+重新启动任务	launchctl load ~/Library/LaunchAgents/com.huangwei.keycounter.plist
+查看按键日志	cat ~/key_counter/key_log.txt
+查看错误日志	cat ~/key_counter/key_counter_error.log
