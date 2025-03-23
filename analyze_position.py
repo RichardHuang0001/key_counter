@@ -52,7 +52,9 @@ def analyze_positions(records):
     position_counter = defaultdict(int)
     for record in records:
         position_counter[record['key']] += 1
-    return position_counter
+        # 将字典按照值降序排序
+    sorted_positions = dict(sorted(position_counter.items(), key=lambda item: item[1], reverse=True))
+    return sorted_positions
 
 # 存储为JSON文件
 def save_to_json(data, file_path):
