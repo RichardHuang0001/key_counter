@@ -69,13 +69,14 @@ def analyze_data(records, existing_summary=None):
             # 只保留不需要重新计算的日期数据
             if date != latest_date.strftime('%Y-%m-%d'):
                 summary[date] = data
-
+    total_count = 0
     for record in records:
         date_str = record['timestamp'].strftime('%Y-%m-%d')
         hour_str = record['timestamp'].strftime('%H')
         summary[date_str]['total'] += 1
+        total_count+=1
         summary[date_str]['hourly'][hour_str] += 1
-
+    print(f"total keycounts:{total_count}")
     # 转换hourly defaultdict 为普通dict，便于json保存
     for date in summary:
         summary[date]['hourly'] = dict(summary[date]['hourly'])
