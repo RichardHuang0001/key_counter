@@ -2,3 +2,5 @@ key_log.txt
 key_counter_error.log
 *.json
 *.jpg
+*.log
+*.png
